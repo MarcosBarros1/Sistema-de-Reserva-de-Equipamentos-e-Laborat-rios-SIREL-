@@ -1,0 +1,262 @@
+/* Importação de fonte genérica para melhor semelhança */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+:root {
+    --color-green-dark: #298642; /* Verde principal do IFCE */
+    --color-green-light: #52a86c;
+    --color-gray-dark: #4d4d4d; /* Cor do fundo da tela de login e texto */
+    --color-input-bg: #e6dcdc; /* Cor de fundo dos inputs */
+    --color-card-bg: #e0e0e0; /* Cor de fundo dos cards na tela inicial */
+    --color-white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* ESTILO PARA A TELA DE LOGIN */
+.login-body {
+    background-color: var(--color-green-dark); /* Cor de fundo da tela de login */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-screen {
+    /* Simula a "caixa" do lado esquerdo */
+    background-color: var(--color-green-dark);
+    width: 100%; /* Ocupa metade da largura da tela */
+    max-width: 3000px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-screen header {
+    background-color: var(--color-gray-dark);
+    color: var(--color-white);
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.login-box {
+    background-color: var(--color-white);
+    width: 65%;
+    max-width: 550px;
+    margin: auto;
+    padding: 40px 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-box .logo img {
+    /* Placeholder IFCE */
+    display: block;
+    margin: 0 auto 5px;
+    background-color: var(--color-green-dark);
+    height: 80px;
+    width: 60px;
+}
+
+.login-box .logo p {
+    font-size: 0.8em;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-gray-dark);
+    margin-bottom: 20px;
+}
+
+.login-box h2 {
+    font-size: 1.5em;
+    color: var(--color-gray-dark);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.login-box form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.login-box label {
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    color: var(--color-gray-dark);
+}
+
+.login-box input {
+    padding: 10px;
+    background-color: var(--color-input-bg);
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    color: var(--color-gray-dark);
+}
+
+.btn-entrar {
+    background-color: var(--color-green-dark);
+    color: var(--color-white);
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    margin-top: 30px;
+    transition: background-color 0.3s;
+}
+
+.btn-entrar:hover {
+    background-color: var(--color-green-light);
+}
+
+/* ------------------------------------- */
+
+/* ESTILO PARA A TELA INICIAL (HOME) */
+.home-body {
+    background-color: var(--color-white); /* Cor de fundo da tela inicial */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.home-screen {
+    /* Simula a "caixa" do lado direito */
+    background-color: var(--color-white);
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.home-screen header {
+    background-color: var(--color-green-dark);
+    color: var(--color-white);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8em;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.home-screen .header-left {
+    display: flex;
+    align-items: center;
+}
+
+.home-screen .header-left img {
+    /* Placeholder IFCE Pequeno */
+    background-color: var(--color-white);
+    height: 25px;
+    width: 20px;
+    margin-right: 10px;
+    
+}
+
+.home-screen .user-info {
+    display: flex;
+    align-items: center;
+    text-align: right;
+}
+
+.home-screen .user-details {
+    margin-right: 10px;
+    line-height: 1.2;
+}
+
+.home-screen .user-avatar {
+    /* Placeholder Avatar */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--color-white);
+}
+
+.home-screen main {
+    flex-grow: 1;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.home-screen h1 {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--color-gray-dark);
+    margin-bottom: 40px;
+    line-height: 1.3;
+}
+
+.reservation-options {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    width: 100%;
+}
+
+.option-card {
+    background-color: var(--color-card-bg);
+    width: 30%;
+    max-width: 250px;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.option-card h2 {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--color-gray-dark);
+}
+
+.option-card i {
+    /* Estilo dos ícones do Font Awesome */
+    color: var(--color-gray-dark);
+    margin-bottom: 30px;
+}
+
+.option-card .btn-reservar {
+    background-color: var(--color-green-dark);
+    color: var(--color-white);
+    padding: 10px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-top: auto; /* Empurra o botão para baixo */
+    transition: background-color 0.3s;
+}
+
+.option-card .btn-reservar:hover {
+    background-color: var(--color-green-light);
+}
+
+.home-screen footer {
+    background-color: var(--color-white);
+    color: var(--color-gray-dark);
+    padding: 15px 20px;
+    font-size: 0.7em;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    margin-top: auto;
+}

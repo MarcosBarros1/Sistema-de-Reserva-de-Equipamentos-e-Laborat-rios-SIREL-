@@ -1,11 +1,13 @@
 import React from 'react';
 import styles from './HomeScreen.module.css';
-// Importação dos componentes do Font Awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// Importação dos ícones específicos (Sólidos)
 import { faVideo, faDesktop, faUsers } from '@fortawesome/free-solid-svg-icons';
 
-function HomeScreen() {
+interface HomeScreenProps {
+    onNavigateToEquipments: () => void; // Nova prop para navegação
+}
+
+function HomeScreen({ onNavigateToEquipments }: HomeScreenProps) {
     return (
         <div className={styles['home-body']}>
             <div className={styles['home-screen']}>
@@ -27,18 +29,21 @@ function HomeScreen() {
                     <h1>Sistema de Reserva de<br />Equipamentos e Laboratórios</h1>
                     <div className={styles['reservation-options']}>
                         
-                        {/* CARD EQUIPAMENTOS */}
+                        {/* CARD EQUIPAMENTOS - AGORA COM O REDIRECIONAMENTO */}
                         <div className={styles['option-card']}>
                             <h2>EQUIPAMENTOS</h2>
-                            {/* Substituído <i> por FontAwesomeIcon */}
                             <FontAwesomeIcon icon={faVideo} size="4x" className={styles.icon} /> 
-                            <button className={styles['btn-reservar']}>RESERVAR</button>
+                            <button 
+                                className={styles['btn-reservar']} 
+                                onClick={onNavigateToEquipments} // <--- AQUI ESTÁ A MUDANÇA
+                            >
+                                RESERVAR
+                            </button>
                         </div>
 
                         {/* CARD LABORATÓRIOS */}
                         <div className={styles['option-card']}>
                             <h2>LABORATÓRIOS</h2>
-                             {/* Substituído <i> por FontAwesomeIcon */}
                             <FontAwesomeIcon icon={faDesktop} size="4x" className={styles.icon} /> 
                             <button className={styles['btn-reservar']}>RESERVAR</button>
                         </div>
@@ -46,7 +51,6 @@ function HomeScreen() {
                         {/* CARD AUDITÓRIO */}
                         <div className={styles['option-card']}>
                             <h2>AUDITÓRIO</h2>
-                            {/* Substituído <i> por FontAwesomeIcon */}
                             <FontAwesomeIcon icon={faUsers} size="4x" className={styles.icon} />
                             <button className={styles['btn-reservar']}>RESERVAR</button>
                         </div>

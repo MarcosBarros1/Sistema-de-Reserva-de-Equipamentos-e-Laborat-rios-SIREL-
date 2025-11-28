@@ -32,7 +32,7 @@ function HomeScreen({ onNavigateToEquipments }: HomeScreenProps) {
                         {/* CARD EQUIPAMENTOS - AGORA COM O REDIRECIONAMENTO */}
                         <div className={styles['option-card']}>
                             <h2>EQUIPAMENTOS</h2>
-                            <FontAwesomeIcon icon={faVideo} size="4x" className={styles.icon} /> 
+                            <FontAwesomeIcon icon={faVideo} size="6x" className={styles.icon} /> 
                             <button 
                                 className={styles['btn-reservar']} 
                                 onClick={onNavigateToEquipments} // <--- AQUI ESTÁ A MUDANÇA
@@ -44,14 +44,14 @@ function HomeScreen({ onNavigateToEquipments }: HomeScreenProps) {
                         {/* CARD LABORATÓRIOS */}
                         <div className={styles['option-card']}>
                             <h2>LABORATÓRIOS</h2>
-                            <FontAwesomeIcon icon={faDesktop} size="4x" className={styles.icon} /> 
+                            <FontAwesomeIcon icon={faDesktop} size="6x" className={styles.icon} /> 
                             <button className={styles['btn-reservar']}>RESERVAR</button>
                         </div>
                         
                         {/* CARD AUDITÓRIO */}
                         <div className={styles['option-card']}>
                             <h2>AUDITÓRIO</h2>
-                            <FontAwesomeIcon icon={faUsers} size="4x" className={styles.icon} />
+                            <FontAwesomeIcon icon={faUsers} size="6x" className={styles.icon} />
                             <button className={styles['btn-reservar']}>RESERVAR</button>
                         </div>
                     </div>

@@ -84,9 +84,9 @@
 
 .option-card {
     background-color: var(--color-card-bg);
-    width: 30%;
-    max-width: 250px;
-    padding: 20px;
+    width: 50%;
+    max-width: 400px;
+    padding: 80px;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -95,8 +95,8 @@
 }
 
 .option-card h2 {
-    font-size: 1.1em;
-    font-weight: 600;
+    font-size: 30px;
+    font-weight: 700;
     margin-bottom: 20px;
     color: var(--color-gray-dark);
 }
@@ -110,7 +110,7 @@
 .btn-reservar {
     background-color: var(--color-green-dark);
     color: var(--color-white);
-    padding: 10px 25px;
+    padding: 10px 45px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -121,13 +121,13 @@
 }
 
 .btn-reservar:hover {
-    background-color: var(--color-green-light);
+    background-color: rgb(0, 72, 255);
 }
 
 .footer {
-    background-color: var(--color-white);
-    color: var(--color-gray-dark);
-    padding: 15px 20px;
+    background-color: #0B3B0B;
+    color: #fff;
+    padding: 20px 35px;
     font-size: 0.7em;
     text-align: center;
     border-top: 1px solid #ddd;

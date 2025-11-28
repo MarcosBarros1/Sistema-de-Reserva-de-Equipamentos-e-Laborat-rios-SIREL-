@@ -1,0 +1,111 @@
+/* src/components/LoginScreen/LoginScreen.module.css */
+.login-body {
+    background-color: var(--color-green-dark); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100vw; 
+}
+
+.login-screen {
+    background-color: var(--color-green-dark);
+    width: 50vw; 
+    max-width: 700px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    
+    color: var(--color-white);
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.login-box {
+    background-color: var(--color-white);
+    width: 65%;
+    max-width: 350px;
+    margin: auto;
+    padding: 40px 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.logo img {
+    display: block;
+    margin: 0 auto 5px;
+    background-color: var(--color-green-dark);
+    height: 80px;
+    width: 60px;
+}
+
+.logo p {
+    font-size: 0.8em;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-gray-dark);
+    margin-bottom: 20px;
+}
+
+.login-box h2 {
+    font-size: 1.5em;
+    color: var(--color-gray-dark);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.login-box form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.login-box label {
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    color: var(--color-gray-dark);
+}
+
+.login-box input {
+    padding: 10px;
+    background-color: var(--color-input-bg);
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    color: var(--color-gray-dark);
+}
+
+.btn-entrar {
+    background-color: var(--color-green-dark);
+    color: var(--color-white);
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    margin-top: 30px;
+    transition: background-color 0.3s;
+}
+
+.btn-entrar:hover {
+    background-color: var(--color-green-light);
+}
+
+/* Responsividade básica */
+@media (max-width: 768px) {
+    .login-screen {
+        width: 100vw;
+        max-width: none;
+    }
+    .login-box {
+        width: 85%;
+    }
+}

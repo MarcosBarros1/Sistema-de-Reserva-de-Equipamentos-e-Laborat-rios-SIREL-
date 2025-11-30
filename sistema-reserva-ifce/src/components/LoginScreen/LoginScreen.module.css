@@ -17,6 +17,13 @@
     flex-direction: column;
 }
 
+/* No seu AuditoriumReservationScreen.module.css */
+.ifce-logo-header {
+    height: 50px; /* Ajuste o tamanho conforme necessário */
+    width: auto;
+    margin-right: 10px;
+}
+
 .header {
     
     color: var(--color-white);
@@ -28,9 +35,9 @@
 .login-box {
     background-color: var(--color-white);
     width: 65%;
-    max-width: 350px;
+    max-width: 550px;
     margin: auto;
-    padding: 40px 30px;
+    padding: 50px 30px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -39,9 +46,8 @@
 .logo img {
     display: block;
     margin: 0 auto 5px;
-    background-color: var(--color-green-dark);
-    height: 80px;
-    width: 60px;
+    height: 90px;
+    width: 90px;
 }
 
 .logo p {

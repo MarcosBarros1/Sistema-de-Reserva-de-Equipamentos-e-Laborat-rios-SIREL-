@@ -2,29 +2,40 @@ import React, { useState } from 'react';
 import LoginScreen from './components/LoginScreen/LoginScreen';
 import HomeScreen from './components/HomeScreen/HomeScreen';
 import EquipmentReservationScreen from './components/EquipmentReservationScreen/EquipmentReservationScreen';
+import LabReservationScreen from './components/LabReservationScreen/LabReservationScreen';
+import AuditoriumReservationScreen from './components/AuditoriumReservationScreen/AuditoriumReservationScreen'; // NOVO COMPONENTE
 
 // Define as visualizações possíveis do aplicativo
-enum View {
-    LOGIN = 'login',
-    HOME = 'home',
-    EQUIPMENTS = 'equipments',
-    // Pode adicionar LABS e AUDITORIUM futuramente
+const View = {
+    LOGIN: 'login',
+    HOME: 'home',
+    EQUIPMENTS: 'equipments',
+    LABS: 'labs',
+    AUDITORIUM: 'auditorium', // NOVO ESTADO
 }
 
 function App() {
     // Define a tela inicial como LOGIN
-    const [currentView, setCurrentView] = useState<View>(View.LOGIN);
+    const [currentView, setCurrentView] = useState(View.LOGIN);
 
     const handleLoginSuccess = () => {
         setCurrentView(View.HOME);
     };
 
-    // FUNÇÃO DE NAVEGAÇÃO: HOME -> EQUIPAMENTOS
     const handleNavigateToEquipments = () => {
         setCurrentView(View.EQUIPMENTS);
     };
 
-    // FUNÇÃO DE NAVEGAÇÃO: Voltar (para uso futuro)
+    const handleNavigateToLabs = () => {
+        setCurrentView(View.LABS);
+    };
+
+    // FUNÇÃO DE NAVEGAÇÃO: HOME -> AUDITÓRIO (NOVO)
+    const handleNavigateToAuditorium = () => {
+        setCurrentView(View.AUDITORIUM);
+    };
+
+    // FUNÇÃO DE NAVEGAÇÃO: Voltar para Home
     const handleGoHome = () => {
         setCurrentView(View.HOME);
     };
@@ -33,12 +44,23 @@ function App() {
 
     switch (currentView) {
         case View.HOME:
-            // Passa a função de navegação para a tela Home
-            componentToRender = <HomeScreen onNavigateToEquipments={handleNavigateToEquipments} />;
+            // Passa as funções de navegação para a tela Home
+            componentToRender = (
+                <HomeScreen 
+                    onNavigateToEquipments={handleNavigateToEquipments} 
+                    onNavigateToLabs={handleNavigateToLabs}
+                    onNavigateToAuditorium={handleNavigateToAuditorium} // NOVO PROPS
+                />
+            );
             break;
         case View.EQUIPMENTS:
-            // Passa a função para voltar à tela Home (se necessário)
             componentToRender = <EquipmentReservationScreen onGoHome={handleGoHome} />;
+            break;
+        case View.LABS:
+            componentToRender = <LabReservationScreen onGoHome={handleGoHome} />;
+            break;
+        case View.AUDITORIUM: // NOVA ROTA
+            componentToRender = <AuditoriumReservationScreen onGoHome={handleGoHome} />;
             break;
         case View.LOGIN:
         default:

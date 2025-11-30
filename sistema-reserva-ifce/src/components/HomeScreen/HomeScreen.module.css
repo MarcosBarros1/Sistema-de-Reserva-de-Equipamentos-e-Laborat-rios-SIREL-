@@ -1,6 +1,6 @@
 /* src/components/HomeScreen/HomeScreen.module.css */
 .home-body {
-    background-color: var(--color-white);
+    background-color: #e3e2e2;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -34,7 +34,6 @@
 }
 
 .header-left img {
-    background-color: var(--color-white);
     height: 25px;
     width: 20px;
     margin-right: 10px;
@@ -59,6 +58,7 @@
 }
 
 .main {
+    background-color: #e3e2e2; /* Cor de fundo principal */
     flex-grow: 1;
     padding: 40px 20px;
     display: flex;
@@ -82,8 +82,15 @@
     width: 100%;
 }
 
+.ifce-logo-header {
+    height: 50px; /* Ajuste o tamanho conforme necessário */
+    width: auto;
+    margin-right: 10px;
+}
+
+
 .option-card {
-    background-color: var(--color-card-bg);
+    background-color: rgb(194, 190, 190);
     width: 50%;
     max-width: 400px;
     padding: 80px;

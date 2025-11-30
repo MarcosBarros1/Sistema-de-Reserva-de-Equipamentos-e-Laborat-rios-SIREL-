@@ -1,5 +1,4 @@
-/* src/components/EquipmentReservationScreen/EquipmentReservationScreen.module.css */
-
+/* src/components/AuditoriumReservationScreen/AuditoriumReservationScreen.module.css */
 
 .reservation-body {
     background-color: #e3e2e2; /* Cor de fundo principal */
@@ -11,14 +10,14 @@
 }
 
 .reservation-screen {
-    background-color: #d1d1d1;
+    background-color: var(--color-white);
     width: 100%; 
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-/* Reutilizando estilos do Header e Footer da Home */
+/* Reutilizando estilos do Header e Footer da Home/Equipment */
 .header {
     background-color: var(--color-green-dark);
     color: var(--color-white);
@@ -34,6 +33,7 @@
 .header-left {
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .header-left img {
@@ -62,13 +62,20 @@
 }
 
 .footer {
-    background-color: #0B3B0B; /* Fundo cinza claro para o rodapé */
+    background-color: #0B3B0B;
     color: #fff;
     padding: 15px 20px;
     font-size: 0.7em;
     text-align: center;
     border-top: 1px solid #ddd;
     margin-top: auto;
+}
+
+/* No seu AuditoriumReservationScreen.module.css */
+.ifce-logo-header {
+    height: 30px; /* Ajuste o tamanho conforme necessário */
+    width: auto;
+    margin-right: 10px;
 }
 
 .main {
@@ -88,53 +95,42 @@
     text-align: center;
 }
 
-.equipment-list {
-    box-shadow: #666;
-    width: 100%;
-    max-width: 1200px;
+.event-list {
+    width: 80%;
+    max-width: 900px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 25px; /* Mais espaço entre os cards */
 }
 
-.equipment-card {
+.event-card {
     background-color: var(--color-white);
     border: 1px solid #ddd;
-    box-shadow: #666;
-    border-radius: 15px;
-    padding: 15px;
+    border-radius: 5px;
+    padding: 20px; /* Mais padding para preencher o espaço */
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .text-content {
     flex-grow: 1;
-    padding-right: 10px;
 }
 
-.equipment-card h3 {
+.event-card h3 {
     font-size: 1.1em;
     font-weight: 600;
     color: var(--color-gray-dark);
     margin-bottom: 5px;
 }
 
-.equipment-card p {
+.event-card p {
     font-size: 0.9em;
     color: #666;
     margin-bottom: 15px;
 }
 
-.image-container img {
-    max-width: 150px;
-    height: auto;
-    display: block;
-}
-
 .btn-reservar {
-    background-color: #007bff; /* Usando um azul padrão, ajuste conforme a cor exata da imagem */
+    background-color: #007bff; /* Azul padrão */
     color: var(--color-white);
     padding: 8px 15px;
     border: none;
@@ -149,19 +145,37 @@
     background-color: #0056b3;
 }
 
-.main {
-    /* Mantém as propriedades existentes */
-    flex-grow: 1;
-    padding: 40px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    /* Adicionando posição relativa para possível posicionamento avançado,
-       mas o alinhamento é feito via flex-start */
-    position: relative; 
+/* src/components/AuditoriumReservationScreen/AuditoriumReservationScreen.module.css */
+
+/* ... (Mantenha todo o código CSS anterior) ... */
+
+/* ADICIONE ESTES NOVOS ESTILOS */
+
+.label {
+    display: block;
+    font-size: 0.9em;
+    color: #444;
+    margin-bottom: 5px;
+    font-weight: 600;
 }
 
-/* 2. Estilo do Botão Voltar */
+.textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical; /* Permite redimensionar apenas verticalmente */
+    font-size: 0.95em;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+}
+
+.textarea:focus {
+    outline: none;
+    border-color: var(--color-green-dark);
+    box-shadow: 0 0 0 1px var(--color-green-dark);
+}
+
 .btn-voltar {
     /* Alinhamento: move o botão para o canto esquerdo do conteúdo */
     align-self: flex-start; 
@@ -187,15 +201,4 @@
 
 .btn-voltar:hover {
     background-color: #3d3d3d; /* Um pouco mais claro no hover */
-}
-
-/* 3. Ajuste no título H2 para garantir que não haja margens desnecessárias acima dele */
-.main h2 {
-    /* Mantenha suas propriedades existentes e apenas zere a margem superior se houver conflito */
-    font-size: 1.8em;
-    font-weight: 700;
-    color: var(--color-gray-dark);
-    /* margin-bottom: 40px; */ /* Pode ser mantido */
-    margin-top: 0; /* Garante que o H2 fique logo abaixo do botão de voltar */
-    text-align: center;
 }

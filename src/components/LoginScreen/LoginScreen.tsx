@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 // Certifique-se de que o CSS Module ainda está sendo usado
 import styles from './LoginScreen.module.css'; 
+import logoIFCE2 from '../../assets/LogoIFCE2.png'
 
 // 1. Tipagem das Propriedades (Props)
 interface LoginScreenProps {
@@ -30,7 +31,7 @@ function LoginScreen({ onLoginSuccess }: LoginScreenProps) {
             <div className={styles['login-screen']}>
                 <div className={styles['login-box']}>
                     <div className={styles.logo}>
-                        <img src="https://via.placeholder.com/60x80/298642/ffffff?text=IFCE" alt="Logo IFCE" />
+                        <img src= {logoIFCE2} alt="Logo IFCE" className={styles['ifce-logo-header']} />
                         <p>INSTITUTO FEDERAL<br />Ceará</p>
                     </div>
                     <h2>LOGIN</h2>

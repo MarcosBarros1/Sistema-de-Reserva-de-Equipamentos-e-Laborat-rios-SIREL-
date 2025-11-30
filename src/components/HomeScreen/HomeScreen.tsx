@@ -2,18 +2,24 @@ import React from 'react';
 import styles from './HomeScreen.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faVideo, faDesktop, faUsers } from '@fortawesome/free-solid-svg-icons';
+import logoIFCEbranco from '../../assets/LogoIFCEbranco.png'
 
+
+// Adicione onNavigateToAuditorium na interface de props
 interface HomeScreenProps {
-    onNavigateToEquipments: () => void; // Nova prop para navegação
+    onNavigateToEquipments: () => void; 
+    onNavigateToLabs: () => void;
+    onNavigateToAuditorium: () => void; // NOVO PROPS
 }
 
-function HomeScreen({ onNavigateToEquipments }: HomeScreenProps) {
+function HomeScreen({ onNavigateToEquipments, onNavigateToLabs, onNavigateToAuditorium }: HomeScreenProps) { 
     return (
         <div className={styles['home-body']}>
             <div className={styles['home-screen']}>
+                {/* ... Header ... */}
                 <header className={styles.header}>
                     <div className={styles['header-left']}>
-                        <img src="https://via.placeholder.com/20x25/298642/ffffff?text=IF" alt="Logo IFCE Pequeno" />
+                        <img src= {logoIFCEbranco} alt="Logo IFCE Pequeno" className= {styles['ifce-logo-header']} />
                         INSTITUTO FEDERAL<br />Ceará
                     </div>
                     <div className={styles['user-info']}>
@@ -29,13 +35,13 @@ function HomeScreen({ onNavigateToEquipments }: HomeScreenProps) {
                     <h1>Sistema de Reserva de<br />Equipamentos e Laboratórios</h1>
                     <div className={styles['reservation-options']}>
                         
-                        {/* CARD EQUIPAMENTOS - AGORA COM O REDIRECIONAMENTO */}
+                        {/* CARD EQUIPAMENTOS */}
                         <div className={styles['option-card']}>
                             <h2>EQUIPAMENTOS</h2>
                             <FontAwesomeIcon icon={faVideo} size="4x" className={styles.icon} /> 
                             <button 
                                 className={styles['btn-reservar']} 
-                                onClick={onNavigateToEquipments} // <--- AQUI ESTÁ A MUDANÇA
+                                onClick={onNavigateToEquipments} 
                             >
                                 RESERVAR
                             </button>
@@ -45,14 +51,24 @@ function HomeScreen({ onNavigateToEquipments }: HomeScreenProps) {
                         <div className={styles['option-card']}>
                             <h2>LABORATÓRIOS</h2>
                             <FontAwesomeIcon icon={faDesktop} size="4x" className={styles.icon} /> 
-                            <button className={styles['btn-reservar']}>RESERVAR</button>
+                            <button 
+                                className={styles['btn-reservar']}
+                                onClick={onNavigateToLabs}
+                            >
+                                RESERVAR
+                            </button>
                         </div>
                         
-                        {/* CARD AUDITÓRIO */}
+                        {/* CARD AUDITÓRIO - ATUALIZADO COM onClick */}
                         <div className={styles['option-card']}>
                             <h2>AUDITÓRIO</h2>
                             <FontAwesomeIcon icon={faUsers} size="4x" className={styles.icon} />
-                            <button className={styles['btn-reservar']}>RESERVAR</button>
+                            <button 
+                                className={styles['btn-reservar']}
+                                onClick={onNavigateToAuditorium} // <--- NOVO EVENTO
+                            >
+                                RESERVAR
+                            </button>
                         </div>
                     </div>
                 </main>

@@ -1,15 +1,16 @@
 import React from 'react';
 import styles from './EquipmentReservationScreen.module.css';
+// Importações de imagens locais (mantidas)
 import projetorBranco from '../../assets/DataShowBranco.jpeg';
 import projetorPreto from '../../assets/DataShowPreto.jpeg';
 import projetorAmarelo from '../../assets/DataShowAmarelo.jpeg';
 
-// Interface para as props (caso precise de navegação reversa, por exemplo)
+// Interface para as props (mantida)
 interface EquipmentReservationScreenProps {
-    onGoHome: () => void;
+    onGoHome: () => void; // Função para voltar à tela inicial
 }
 
-// Componente para um único item de equipamento
+// Componente para um único item de equipamento (mantido)
 interface EquipmentItemProps {
     name: string;
     description: string;
@@ -40,7 +41,6 @@ function EquipmentReservationScreen({ onGoHome }: EquipmentReservationScreenProp
             <div className={styles['reservation-screen']}>
                 <header className={styles.header}>
                     <div className={styles['header-left']}>
-                        {/* Este texto foi extraído da captura de tela */}
                         <img src="https://via.placeholder.com/20x25/298642/ffffff?text=IF" alt="Logo IFCE Pequeno" />
                         INSTITUTO FEDERAL<br />Ceará
                     </div>
@@ -54,9 +54,14 @@ function EquipmentReservationScreen({ onGoHome }: EquipmentReservationScreenProp
                 </header>
 
                 <main className={styles.main}>
+                    {/* 👇 NOVO BOTÃO DE VOLTAR */}
+                    <button className={styles['btn-voltar']} onClick={onGoHome}>
+                        ← Voltar para Reservas
+                    </button>
+                    
                     <h2>Equipamentos</h2>
                     
-                    {/* Lista de Equipamentos */}
+                    {/* Lista de Equipamentos (mantida) */}
                     <div className={styles['equipment-list']}>
                         <EquipmentItem
                             name="Data Show (BRANCO) - com suporte para HDMI"
@@ -75,6 +80,7 @@ function EquipmentReservationScreen({ onGoHome }: EquipmentReservationScreenProp
                         />
                     </div>
                 </main>
+
 
                 <footer className={styles.footer}>
                     Instituto Federal de Educação, Ciência e Tecnologia do Ceará<br />

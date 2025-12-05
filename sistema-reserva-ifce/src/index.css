@@ -1,0 +1,18 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+:root {
+    --color-green-dark: #298642; 
+    --color-green-light: #52a86c;
+    --color-gray-dark: #4d4d4d;
+    --color-input-bg: #e6dcdc;
+    --color-card-bg: #e0e0e0;
+    --color-white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}

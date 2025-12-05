@@ -1,0 +1,201 @@
+/* src/components/EquipmentReservationScreen/EquipmentReservationScreen.module.css */
+
+
+.reservation-body {
+    background-color: #e3e2e2; /* Cor de fundo principal */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.reservation-screen {
+    background-color: #d1d1d1;
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Reutilizando estilos do Header e Footer da Home */
+.header {
+    background-color: var(--color-green-dark);
+    color: var(--color-white);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8em;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-left img {
+    background-color: var(--color-white);
+    height: 25px;
+    width: 20px;
+    margin-right: 10px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    text-align: right;
+}
+
+.user-details {
+    margin-right: 10px;
+    line-height: 1.2;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--color-white);
+}
+
+.footer {
+    background-color: #0B3B0B; /* Fundo cinza claro para o rodapé */
+    color: #fff;
+    padding: 15px 20px;
+    font-size: 0.7em;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    margin-top: auto;
+}
+
+.main {
+    background-color: #e3e2e2; /* Cor de fundo principal */
+    flex-grow: 1;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main h2 {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--color-gray-dark);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.equipment-list {
+    box-shadow: #666;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.equipment-card {
+    background-color: var(--color-white);
+    border: 1px solid #ddd;
+    box-shadow: #666;
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.text-content {
+    flex-grow: 1;
+    padding-right: 10px;
+}
+
+.equipment-card h3 {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--color-gray-dark);
+    margin-bottom: 5px;
+}
+
+.equipment-card p {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.image-container img {
+    max-width: 150px;
+    height: auto;
+    display: block;
+}
+
+.btn-reservar {
+    background-color: #007bff; /* Usando um azul padrão, ajuste conforme a cor exata da imagem */
+    color: var(--color-white);
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.btn-reservar:hover {
+    background-color: #0056b3;
+}
+
+.main {
+    /* Mantém as propriedades existentes */
+    flex-grow: 1;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    /* Adicionando posição relativa para possível posicionamento avançado,
+       mas o alinhamento é feito via flex-start */
+    position: relative; 
+}
+
+/* 2. Estilo do Botão Voltar */
+.btn-voltar {
+    /* Alinhamento: move o botão para o canto esquerdo do conteúdo */
+    align-self: flex-start; 
+    width: auto; /* Largura automática baseada no conteúdo */
+    
+    /* Recuo para alinhar com a lista de equipamentos (80% de largura) */
+    /* Calculando o recuo baseado na largura máxima do container da lista */
+    /* Se a lista tem 80% de largura e está centralizada, 10% é a margem esquerda */
+    margin-left: 0%; 
+    
+    /* Estilo visual */
+    background-color: var(--color-gray-dark); /* Usando o cinza escuro do cabeçalho */
+    color: var(--color-white);
+    padding: 10px 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-bottom: 25px; /* Espaço entre o botão e o título H2 "Equipamentos" */
+    transition: background-color 0.2s;
+}
+
+.btn-voltar:hover {
+    background-color: #3d3d3d; /* Um pouco mais claro no hover */
+}
+
+/* 3. Ajuste no título H2 para garantir que não haja margens desnecessárias acima dele */
+.main h2 {
+    /* Mantenha suas propriedades existentes e apenas zere a margem superior se houver conflito */
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--color-gray-dark);
+    /* margin-bottom: 40px; */ /* Pode ser mantido */
+    margin-top: 0; /* Garante que o H2 fique logo abaixo do botão de voltar */
+    text-align: center;
+}

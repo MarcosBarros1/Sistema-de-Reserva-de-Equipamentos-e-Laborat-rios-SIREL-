@@ -1,0 +1,204 @@
+/* src/components/AuditoriumReservationScreen/AuditoriumReservationScreen.module.css */
+
+.reservation-body {
+    background-color: #e3e2e2; /* Cor de fundo principal */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.reservation-screen {
+    background-color: var(--color-white);
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Reutilizando estilos do Header e Footer da Home/Equipment */
+.header {
+    background-color: var(--color-green-dark);
+    color: var(--color-white);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8em;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header-left img {
+    background-color: var(--color-white);
+    height: 25px;
+    width: 20px;
+    margin-right: 10px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    text-align: right;
+}
+
+.user-details {
+    margin-right: 10px;
+    line-height: 1.2;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--color-white);
+}
+
+.footer {
+    background-color: #0B3B0B;
+    color: #fff;
+    padding: 15px 20px;
+    font-size: 0.7em;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    margin-top: auto;
+}
+
+/* No seu AuditoriumReservationScreen.module.css */
+.ifce-logo-header {
+    height: 30px; /* Ajuste o tamanho conforme necessário */
+    width: auto;
+    margin-right: 10px;
+}
+
+.main {
+    background-color: #e3e2e2; /* Cor de fundo principal */
+    flex-grow: 1;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main h2 {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--color-gray-dark);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.event-list {
+    width: 80%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Mais espaço entre os cards */
+}
+
+.event-card {
+    background-color: var(--color-white);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px; /* Mais padding para preencher o espaço */
+    display: flex;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.text-content {
+    flex-grow: 1;
+}
+
+.event-card h3 {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--color-gray-dark);
+    margin-bottom: 5px;
+}
+
+.event-card p {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.btn-reservar {
+    background-color: #007bff; /* Azul padrão */
+    color: var(--color-white);
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.btn-reservar:hover {
+    background-color: #0056b3;
+}
+
+/* src/components/AuditoriumReservationScreen/AuditoriumReservationScreen.module.css */
+
+/* ... (Mantenha todo o código CSS anterior) ... */
+
+/* ADICIONE ESTES NOVOS ESTILOS */
+
+.label {
+    display: block;
+    font-size: 0.9em;
+    color: #444;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical; /* Permite redimensionar apenas verticalmente */
+    font-size: 0.95em;
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+}
+
+.textarea:focus {
+    outline: none;
+    border-color: var(--color-green-dark);
+    box-shadow: 0 0 0 1px var(--color-green-dark);
+}
+
+.btn-voltar {
+    /* Alinhamento: move o botão para o canto esquerdo do conteúdo */
+    align-self: flex-start; 
+    width: auto; /* Largura automática baseada no conteúdo */
+    
+    /* Recuo para alinhar com a lista de equipamentos (80% de largura) */
+    /* Calculando o recuo baseado na largura máxima do container da lista */
+    /* Se a lista tem 80% de largura e está centralizada, 10% é a margem esquerda */
+    margin-left: 0%; 
+    
+    /* Estilo visual */
+    background-color: var(--color-gray-dark); /* Usando o cinza escuro do cabeçalho */
+    color: var(--color-white);
+    padding: 10px 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-bottom: 25px; /* Espaço entre o botão e o título H2 "Equipamentos" */
+    transition: background-color 0.2s;
+}
+
+.btn-voltar:hover {
+    background-color: #3d3d3d; /* Um pouco mais claro no hover */
+}

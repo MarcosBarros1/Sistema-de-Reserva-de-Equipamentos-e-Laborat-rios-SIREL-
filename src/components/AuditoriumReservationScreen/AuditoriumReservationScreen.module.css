@@ -1,12 +1,16 @@
 /* src/components/AuditoriumReservationScreen/AuditoriumReservationScreen.module.css */
 
 .reservation-body {
-    background-color: #e3e2e2; /* Cor de fundo principal */
+    background-color: #e3e2e2;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     min-height: 100vh;
     width: 100vw;
+}
+
+.h2{
+    margin-bottom: 10px;
 }
 
 .reservation-screen {
@@ -17,7 +21,8 @@
     min-height: 100vh;
 }
 
-/* Reutilizando estilos do Header e Footer da Home/Equipment */
+/* --- HEADER E FOOTER --- */
+
 .header {
     background-color: var(--color-green-dark);
     color: var(--color-white);
@@ -36,10 +41,9 @@
     cursor: pointer;
 }
 
-.header-left img {
-    background-color: var(--color-white);
-    height: 25px;
-    width: 20px;
+.ifce-logo-header {
+    height: 30px; /* Tamanho ajustado para o logo IFCE */
+    width: auto;
     margin-right: 10px;
 }
 
@@ -71,15 +75,10 @@
     margin-top: auto;
 }
 
-/* No seu AuditoriumReservationScreen.module.css */
-.ifce-logo-header {
-    height: 30px; /* Ajuste o tamanho conforme necessário */
-    width: auto;
-    margin-right: 10px;
-}
+/* --- MAIN CONTENT / FORM --- */
 
 .main {
-    background-color: #e3e2e2; /* Cor de fundo principal */
+    background-color: #e3e2e2;
     flex-grow: 1;
     padding: 40px 20px;
     display: flex;
@@ -87,93 +86,102 @@
     align-items: center;
 }
 
-.main h2 {
+.formContainer {
+    background-color: var(--color-white);
+    width: 90%;
+    max-width: 800px; /* Largura máxima do formulário */
+    padding: 30px 40px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo do título H2 fora do formulário */
+.pageTitle {
     font-size: 1.8em;
     font-weight: 700;
     color: var(--color-gray-dark);
-    margin-bottom: 40px;
+    margin-bottom: 30px; /* Espaço entre o título e o container do formulário */
     text-align: center;
 }
 
-.event-list {
-    width: 80%;
-    max-width: 900px;
-    display: flex;
-    flex-direction: column;
-    gap: 25px; /* Mais espaço entre os cards */
-}
-
-.event-card {
+/* Ajuste o formContainer para que ele pareça uma "caixa de formulário" sem o título */
+.formContainer {
     background-color: var(--color-white);
-    border: 1px solid #ddd;
+    width: 90%;
+    max-width: 800px; 
+    padding: 30px 40px; /* Mantenha o padding interno para os campos */
     border-radius: 5px;
-    padding: 20px; /* Mais padding para preencher o espaço */
-    display: flex;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.text-content {
-    flex-grow: 1;
+.formGroup {
+    margin-bottom: 25px;
 }
-
-.event-card h3 {
-    font-size: 1.1em;
-    font-weight: 600;
-    color: var(--color-gray-dark);
-    margin-bottom: 5px;
-}
-
-.event-card p {
-    font-size: 0.9em;
-    color: #666;
-    margin-bottom: 15px;
-}
-
-.btn-reservar {
-    background-color: #007bff; /* Azul padrão */
-    color: var(--color-white);
-    padding: 8px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9em;
-    font-weight: 600;
-    transition: background-color 0.3s;
-}
-
-.btn-reservar:hover {
-    background-color: #0056b3;
-}
-
-/* src/components/AuditoriumReservationScreen/AuditoriumReservationScreen.module.css */
-
-/* ... (Mantenha todo o código CSS anterior) ... */
-
-/* ADICIONE ESTES NOVOS ESTILOS */
 
 .label {
     display: block;
-    font-size: 0.9em;
-    color: #444;
-    margin-bottom: 5px;
+    font-size: 1em;
     font-weight: 600;
+    color: var(--color-gray-dark);
+    margin-bottom: 8px;
 }
 
+/* --- ESTILOS DOS CAMPOS DE TEXTO E TEXTAREA --- */
+
+.textInput,
 .textarea {
     width: 100%;
     padding: 10px;
-    margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    resize: vertical; /* Permite redimensionar apenas verticalmente */
-    font-size: 0.95em;
-    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+    font-size: 1em;
+    box-sizing: border-box;
 }
 
+.textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.textInput:focus,
 .textarea:focus {
     outline: none;
     border-color: var(--color-green-dark);
     box-shadow: 0 0 0 1px var(--color-green-dark);
+}
+
+/* --- ESTILOS DO GRUPO DE RÁDIO (Tipo de Ação) --- */
+
+.radioGroup {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+    gap: 20px;
+}
+
+.radioLabel {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 400;
+    color: var(--color-gray-dark);
+}
+
+.radioInput {
+    margin-right: 5px;
+    /* Oculta o radio nativo para estilos customizados, mas mantemos o básico */
+    /* width: 16px; 
+       height: 16px; */
+}
+
+.otherInput {
+    /* Campo de texto que aparece ao lado de 'Outro' */
+    width: 200px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9em;
+    margin-left: -2px; /* Puxa para perto do radio button */
 }
 
 .btn-voltar {
@@ -201,4 +209,23 @@
 
 .btn-voltar:hover {
     background-color: #3d3d3d; /* Um pouco mais claro no hover */
+}
+
+/* --- BOTÃO RESERVAR --- */
+
+.btn-reservar {
+    background-color: #007bff;
+    color: var(--color-white);
+    padding: 10px 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    margin-top: 30px;
+    transition: background-color 0.3s;
+}
+
+.btn-reservar:hover {
+    background-color: #0056b3;
 }

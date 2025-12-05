@@ -1,28 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './EquipmentReservationScreen.module.css';
-// Importações de imagens locais (mantidas)
+import ReservationModal from '../../components/ReservationModal/ReservationModal';
+
+// Importações de imagens locais
 import projetorBranco from '../../assets/DataShowBranco.jpeg';
 import projetorPreto from '../../assets/DataShowPreto.jpeg';
 import projetorAmarelo from '../../assets/DataShowAmarelo.jpeg';
 
-// Interface para as props (mantida)
+// Interface para as props
 interface EquipmentReservationScreenProps {
-    onGoHome: () => void; // Função para voltar à tela inicial
+    onGoHome: () => void;
 }
 
-// Componente para um único item de equipamento (mantido)
+// Componente para um único item de equipamento
 interface EquipmentItemProps {
     name: string;
     description: string;
     imageUrl: string;
+    onReserve: (itemName: string) => void;
 }
 
-const EquipmentItem: React.FC<EquipmentItemProps> = ({ name, description, imageUrl }) => (
+// O Componente EquipmentItem
+const EquipmentItem: React.FC<EquipmentItemProps> = ({ name, description, imageUrl, onReserve }) => (
     <div className={styles['equipment-card']}>
         <div className={styles['text-content']}>
             <h3>{name}</h3>
             <p>{description}</p>
-            <button className={styles['btn-reservar']}>Reservar</button>
+            <button 
+                className={styles['btn-reservar']}
+                onClick={() => onReserve(name)} 
+            >
+                Reservar
+            </button>
         </div>
         <div className={styles['image-container']}>
             <img src={imageUrl} alt={name} />
@@ -32,15 +41,29 @@ const EquipmentItem: React.FC<EquipmentItemProps> = ({ name, description, imageU
 
 
 function EquipmentReservationScreen({ onGoHome }: EquipmentReservationScreenProps) {
-    // Reutilizando os dados do usuário da Home (simulação)
+    // ESTADO PARA O MODAL
+    const [showModal, setShowModal] = useState(false);
+    const [reservedItem, setReservedItem] = useState('');
+
     const userName = "Jéssica de Paulo Rodrigues";
     const userMatricula = "20241283000xxx";
+
+    // Função que simula a reserva e mostra o Modal
+    const handleReserve = (itemName: string) => {
+        setReservedItem(itemName);
+        setShowModal(true);
+    };
+
+    const handleCloseModal = () => {
+        setShowModal(false);
+    };
+
 
     return (
         <div className={styles['reservation-body']}>
             <div className={styles['reservation-screen']}>
                 <header className={styles.header}>
-                    <div className={styles['header-left']}>
+                    <div className={styles['header-left']} onClick={onGoHome}>
                         <img src="https://via.placeholder.com/20x25/298642/ffffff?text=IF" alt="Logo IFCE Pequeno" />
                         INSTITUTO FEDERAL<br />Ceará
                     </div>
@@ -54,29 +77,30 @@ function EquipmentReservationScreen({ onGoHome }: EquipmentReservationScreenProp
                 </header>
 
                 <main className={styles.main}>
-                    {/* 👇 NOVO BOTÃO DE VOLTAR */}
                     <button className={styles['btn-voltar']} onClick={onGoHome}>
                         ← Voltar para Reservas
                     </button>
                     
                     <h2>Equipamentos</h2>
                     
-                    {/* Lista de Equipamentos (mantida) */}
                     <div className={styles['equipment-list']}>
                         <EquipmentItem
                             name="Data Show (BRANCO) - com suporte para HDMI"
                             description="Equipamento de exibição de vídeo."
                             imageUrl={projetorBranco}
+                            onReserve={handleReserve}
                         />
                         <EquipmentItem
                             name="Data Show (PRETO) - sem suporte para HDMI"
                             description="Equipamento de exibição de vídeo."
                             imageUrl={projetorPreto}
+                            onReserve={handleReserve}
                         />
                         <EquipmentItem
                             name="Data Show (AMARELO) - sem suporte para HDMI"
                             description="Equipamento de exibição de vídeo."
                             imageUrl={projetorAmarelo}
+                            onReserve={handleReserve}
                         />
                     </div>
                 </main>
@@ -87,6 +111,17 @@ function EquipmentReservationScreen({ onGoHome }: EquipmentReservationScreenProp
                     2025. All Rights Reserved.
                 </footer>
             </div>
+
+            {/* INTEGRANDO O MODAL AQUI */}
+            <ReservationModal 
+                isVisible={showModal} 
+                onClose={handleCloseModal} 
+                title={reservedItem}
+                reservationDetails={{
+                    data: '15/01/2026',
+                    horario: '10:00 - 12:00'
+                }}
+            />
         </div>
     );
 }
